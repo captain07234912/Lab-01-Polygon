@@ -1,5 +1,4 @@
-# Ejercicio-OBJ
+# Graficas de computadoras semanal  Lab 01
 
-principal es el creatoralligator y el modelo que se tiene que cargar es un charizard
-
+poligono de tetera y humo de formas
 
