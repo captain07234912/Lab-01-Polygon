@@ -21,10 +21,17 @@ class ModelObJ(object):
 
         self.modobj()
 
+
+
+#### muchos objs vienen con diferentes signos de puntuacion para separar varias cosas
+### en este caso se arreglaron los que a mi me aparecieron
     def modobj(self):
         for line in self.lines:
             if line:
-                prefix, value = line.split(' ', 1)
+                try:
+                    prefix, value = line.split(' ', 1)
+                except:
+                    continue
 
                 if prefix == 'v': # vertices
                     self.vertices.append(list(map(float,value.split(' '))))
@@ -36,5 +43,18 @@ class ModelObJ(object):
                     self.texcoords.append(list(map(float,value.split(' '))))
                     #caras
                 elif prefix == 'f':
-                    self.faces.append([list(map(int, vert.split('/'))) for vert in value.split(' ')])
+                    caras = value.split(' ')
+                    lista = []
+                    for cara in caras:
+                        if cara != '':
+                            c = cara.split('/')
+                            vector = []
+                            for x in c:
+                                try:
+                                    vector.append(int(x))
+                                except:
+                                    print(str(x))
 
+                            lista.append(vector)
+                    self.faces.append(lista)
+        print("Si se pudo cargar")

@@ -39,10 +39,6 @@ def dword(d):
 def color(r, g, b):
     return bytes([int(b * 255), int(g * 255), int(r * 255)])
 
-
-def xcruz(pointA, pointB):
-    return (pointA[0]*pointB[1]) - (pointA[1]*pointB[0])
-
 ########################### Lista de colores para probar
 Fondo = color(0,0,0)
 Blanco = color(1,1,1)

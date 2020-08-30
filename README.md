@@ -1,4 +1,5 @@
-# Graficas de computadoras semanal  Lab 01
+# Ejercicio-OBJ
 
-poligono de tetera y humo de formas
+principal es el creatoralligator y el modelo que se tiene que cargar es un charizard
+
 

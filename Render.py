@@ -7,7 +7,7 @@ Graficas por computadora
 Render
 Jorge Suchite Carnet 15293
 07/07/2020
-Lab 1: Filling a polygon
+SR3 : Obj
 """
 
 
@@ -41,8 +41,13 @@ class Render(object):
         self.pixels = [[self.Fondo for x in range(self.width)] for y in range(self.height)]
 
     # funcion que me deeja ahcer el punto x largo y  alto
+    # si lo pinta mitad afuera y mitad adentro puedo verlo
     def punto(self,x,y):
-        self.pixels[y][x] = self.colorPintar
+        try:
+            self.pixels[y][x] = self.colorPintar
+        except:
+            pass
+
 
     """ https://www.khronos.org/registry/OpenGL-Refpages/es2.0/xhtml/glViewport.xml
     
@@ -53,7 +58,12 @@ class Render(object):
         pixelY =  int(( y + 1) * (self.ViewportHEight / 2) + self.CooryViewport)
         self.pixels[pixelY][pixelX] = self.colorPintar
     def glvertexLinea(self,xcoor,ycoor):
-        self.pixels[ycoor][xcoor] =self.colorPintar
+# si se pasa del rango puedo ver si si lo pinta o no
+        try:
+            self.pixels[ycoor][xcoor] = self.colorPintar
+        except:
+            pass
+
 
 
 
@@ -179,19 +189,7 @@ class Render(object):
 
                 self.glPrintLineaObj(xi, yi, xn, yn)
 
-    ########################### Poligono
-
-    #unir vertices pero  ahora son 3
-    # dibujar los poligonos pero sin llenarlos
-    def pintaPol (self, points):
-        cont =  len(points)
-        for i in range(cont):
-            v0 =points[i]
-            v1= points[(i+1) % cont]
-            self.glPrintLineaObj(v0[0], v0[1], v1[0], v1[1])
-
-
-    ###################### funcion que escribe el bmp
+    ###################### funcion que escribe el bmp  ##########################################
     def glFinish(self, filename):
         archivo = open(filename, 'wb')
 
@@ -222,6 +220,17 @@ class Render(object):
 
         archivo.close()
 
+
+
+
+        ##################################### Fill a polygon  lab 1
+
+    def pintaPol (self, points):
+        cont =  len(points)
+        for i in range(cont):
+            v0 =points[i]
+            v1= points[(i+1) % cont]
+            self.glPrintLineaObj(v0[0], v0[1], v1[0], v1[1])
 
 
 

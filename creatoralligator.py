@@ -20,16 +20,16 @@ YELLOW = (1,1,0)
 
 ###########################################################
 # tamaño de la imagen
-prueba = Render(1000,500)
+prueba = Render(1000,1000)
 # introduzca el tamaño del viewport
 #prueba.glViewport(500, 150, 200 ,400)
 
 # ingrese el color del fondo
-#prueba.glClearColor(0,0,0)
+prueba.glClearColor(0,0,0)
 
 # ingrese el color para pintar
-
-#prueba.glClear()
+prueba.glColor(0, 0, 1)
+prueba.glClear()
 
 ######################Punto ##################################
 # si quiere pintar un punto es aqui
@@ -46,35 +46,39 @@ prueba = Render(1000,500)
 
 #################### Model Obj #############################################
 
-#prueba.generacionObj('./modelos/Charizard.obj', (350,100), (20,20))
+#prueba.generacionObj('./modelos/Lola.obj', (500,200), (120,120))
+
+
+#prueba.glFinish('Julio.bmp')
 
 
 
-################# Lab 1####################
 
-polinizacion = [(165, 380), (185, 360), (180, 330) ,(207, 345), (233, 330), (230, 360), (250, 380), (220, 385), (205, 410), (193, 383)]
 
-polinizacion2 = [(321, 335) ,(288, 286), (339, 251) ,(374, 302)]
+# lab 1 ####################################################
+"""polinizacion = [(165, 380), (185, 360), (180, 330), (207, 345), (233, 330), (230, 360), (250, 380), (220, 385),
+                (205, 410), (193, 383)]
+
+polinizacion2 = [(321, 335), (288, 286), (339, 251), (374, 302)]
 
 polinizacion3 = [(377, 249), (411, 197), (436, 249)]
 
-polinizacion4 = [(413, 177), (448, 159), (502, 88), (553, 53),(535, 36),(676, 37), (660, 52),(750, 145), (761, 179), (672, 192), (659, 214), (615, 214), (632, 230) ,(580, 230),(597, 215), (552, 214), (517, 144), (466, 180)]
-polinizacion5 = [(682, 175), (708, 120), (735, 148) ,(739, 170)]
+polinizacion4 = [(413, 177), (448, 159), (502, 88), (553, 53), (535, 36), (676, 37), (660, 52), (750, 145), (761, 179),
+                 (672, 192), (659, 214), (615, 214), (632, 230), (580, 230), (597, 215), (552, 214), (517, 144),
+                 (466, 180)]
+polinizacion5 = [(682, 175), (708, 120), (735, 148), (739, 170)]
 
-prueba.glColor(1,0,0)
+prueba.glColor(1, 0, 0)
 prueba.pintaPol(polinizacion)
-prueba.glColor(0,1,0)
+prueba.glColor(0, 1, 0)
 prueba.pintaPol(polinizacion2)
-prueba.glColor(0,1,1)
+prueba.glColor(0, 1, 1)
 prueba.pintaPol(polinizacion3)
-prueba.glColor(1,0.07,0.57)
+prueba.glColor(1, 0.07, 0.57)
 prueba.pintaPol(polinizacion4)
-prueba.glColor(1,1,0)
+prueba.glColor(1, 1, 0)
 prueba.pintaPol(polinizacion5)
- 
-
 
 prueba.glFinish('Poligono.bmp')
 
-
-
+"""
